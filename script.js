@@ -21,3 +21,11 @@ Gameboard.setMark(0,"x");
 
 console.log(Gameboard.getBoard());
 
+const Player = (name,mark) => {
+    return {
+        name,
+        mark
+    };
+};
+
+
