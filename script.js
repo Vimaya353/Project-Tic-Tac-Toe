@@ -98,6 +98,34 @@ const GameController = (() => {
 
 console.log(Gameboard.getBoard());
 
+const DisplayController = (() => {
+
+    const gameboardElement = document.querySelector("#gameboard");
+
+    const render = () => {
+        const board = Gameboard.getBoard();
+
+        gameboardElement.innerHTML = "";
+
+        board.forEach((cell, index) => {
+            const cellElement = document.createElement("button");
+
+            cellElement.classList.add("cell");
+            cellElement.textContent = cell;
+            cellElement.dataset.index = index;
+
+            gameboardElement.appendChild(cellElement);
+
+        });
+
+    };
+
+    return {
+        render
+    };
+
+})();
+
 
 
 
